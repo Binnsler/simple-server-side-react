@@ -11,11 +11,11 @@ module.exports = React.createClass({
 		return (
 			<html>
 				<head>
-					<title>{this.props.title}</title>
+					<title>Server-React-Boilerplate</title>
 					<link rel='stylesheet' href='/style.css'/>
 				</head>
 				<body>
-					<h1>{this.props.title}</h1>
+					<h1>Server-React-Boilerplate</h1>
 					<p>Is not server side rendering remarkable?</p>
 					<button onClick={this._handleClick}>Click Me</button>
 					<script dangerouslySetInnerHTML={{__html: 'window.PROPS=' + JSON.stringify(this.props)}} />
