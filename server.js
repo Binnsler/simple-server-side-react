@@ -1,18 +1,24 @@
+'use strict';
 require('babel-register')({
 	presets: ['react']
 });
+
+// import express from 'express';
 var express = require('express');
 var app = express();
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
-var Component = require('./Component.jsx');
+var App = require('./src/containers/App.jsx');
 
 app.use(express.static('public'));
 
 app.get('/', function(request, response){
-	var props = {title: 'Test Prop Title'};
+	var bob = 'Bob'
+	var test = `hello_${bob}`;
+	console.log(test)
+
 	var html = ReactDOMServer.renderToString(
-		React.createElement(Component, props)
+		React.createElement(App)
 	);
 	response.send(html);
 });
